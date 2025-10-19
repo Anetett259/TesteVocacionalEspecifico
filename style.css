@@ -1,0 +1,148 @@
+/* Paleta de cores para um tema profissional/sóbrio */
+:root {
+    --cor-fundo: #F4F6F7;
+    --cor-principal: #FFFFFF;
+    --cor-secundaria: #2980B9;
+    --cor-destaque: #2ECC71;
+    --cor-texto: #34495E;
+    --cor-terciaria: #5DADE2; /* Um tom um pouco mais claro */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Remover margem padrão do body */
+    padding: 20px; /* Adicionar um padding para telas pequenas */
+    box-sizing: border-box; /* Incluir padding no cálculo da largura/altura */
+}
+
+.caixa-principal {
+    background-color: var(--cor-principal);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 800px; /* Aumentei um pouco mais para as questões */
+    text-align: center;
+    padding: 30px; /* Mais padding para um visual mais clean */
+    border-radius: 10px;
+}
+
+h1 {
+    color: var(--cor-secundaria);
+    margin-bottom: 25px;
+}
+
+/* Estilo para as instruções iniciais */
+.caixa-instrucoes {
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #EBF5FB; /* Cor de fundo suave para instruções */
+    border-left: 5px solid var(--cor-secundaria);
+    border-radius: 5px;
+    color: #2C3E50;
+}
+
+.caixa-instrucoes p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.caixa-instrucoes strong {
+    color: var(--cor-texto);
+}
+
+
+.caixa-perguntas {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 30px 0;
+    text-align: left; /* Alinha a pergunta à esquerda */
+}
+
+.caixa-alternativas {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os botões quebrem a linha */
+    justify-content: center; /* Centraliza os botões */
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--cor-terciaria); /* Cor um pouco mais clara para as opções */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px; /* Borda mais suave */
+    padding: 15px 20px; /* Mais padding para melhor toque */
+    margin: 8px; /* Ajustei a margem entre os botões */
+    cursor: pointer;
+    font-size: 17px;
+    flex: 1 1 auto; /* Permite que os botões cresçam e encolham, mas mantendo a largura */
+    min-width: 150px; /* Largura mínima para botões */
+    max-width: 200px; /* Largura máxima para botões */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeito de transição suave */
+    text-align: center; /* Centraliza o texto das opções */
+}
+
+button:hover {
+    background-color: var(--cor-secundaria);
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+}
+
+.caixa-resultado {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ECF0F1;
+}
+
+.texto-resultado {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: left; /* Alinhado à esquerda para melhor leitura */
+}
+
+.texto-resultado h2 {
+    color: var(--cor-secundaria);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* Estilo para o botão de refazer teste no final */
+.caixa-resultado button {
+    background-color: var(--cor-destaque);
+    width: auto;
+    padding: 12px 25px;
+    margin-top: 25px;
+}
+
+.caixa-resultado button:hover {
+    background-color: #27AE60; /* Um verde um pouco mais escuro */
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .caixa-principal {
+        padding: 20px;
+        margin: 10px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    .caixa-perguntas {
+        font-size: 18px;
+    }
+    button {
+        font-size: 15px;
+        padding: 12px 15px;
+        margin: 5px;
+        min-width: unset; /* Remove min-width em telas pequenas */
+        width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
+    .caixa-alternativas {
+        flex-direction: column; /* Botões um abaixo do outro em telas pequenas */
+    }
+}
